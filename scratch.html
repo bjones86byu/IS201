@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobby Page</title>
+    <link rel="stylesheet" href="css/scratchstyles.css">
+</head>
+<body>
+    <nav>
+        <a href="https://your-professional-site.com">Back to Professional Page</a>
+    </nav>
+    <a href="#bottom" class="jump-link">Jump to Bottom</a>
+    <h1>Exploring My Hobby: Golf</h1>
+    <ul>
+        <li>Favorite Places I've Played Golf
+            <ol class="centered-list">
+                <li>Sand Hollow, St George, UT</li>
+                <li>Longbow, Mesa, AZ</li>
+                <li>Ocotillo, Chandler, AZ</li>
+            </ol>
+        </li>
+        <li>My Favorite Clubs
+            <ol class="centered-list">
+                <li>Driver</li>
+                <li>Loft wedge</li>
+                <li>7 Iron</li>
+            </ol>
+        </li>
+    </ul>
+    <img src="assets/img/sandhollow.webp" alt="Sand Hollow" class="responsive-img">
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/me5gjIUe1Ks" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="box box1">Fun Fact 1: Golf is One of the Oldest Sports Still Played</div>
+    <div class="box box2">Fun Fact 2: Tiger Woods Made His First Hole-in-One at Age 8</div>
+    <div class="box box3">Fun Fact 3: Golf Was Played on the Moon</div>
+    <div class="tableau-container">
+        <div class='tableauPlaceholder' id='viz1745010318461' style='position: relative'>
+            <noscript>
+                <a href='#'>
+                    <img alt='Golf Superstore Performance Overview' src='https://public.tableau.com/static/images/Go/GolfSuperstorePerformanceOverview/GolfSuperstorePerformanceOverview/1_rss.png' style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='GolfSuperstorePerformanceOverview/GolfSuperstorePerformanceOverview' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/Go/GolfSuperstorePerformanceOverview/GolfSuperstorePerformanceOverview/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+            </object>
+        </div>
+    </div>
+    <div id="bottom">
+        <p>Thanks for visiting!</p>
+    </div>
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1745010318461');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '100%';
+        vizElement.style.height = '800px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+</body>
+</html>
