@@ -16,7 +16,7 @@ nav a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
- : 10px;
+  padding: 10px;
   display: inline-block;
 }
 
@@ -34,24 +34,26 @@ h1 {
   color: #004080;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-}
-
-ul li {
-  margin: 10px 0;
-}
-
 ol.centered-list {
   padding-left: 0;
   text-align: center;
+  list-style-position: inside;
 }
 
 ol.centered-list li {
-  display: inline-block;
-  margin: 0 10px;
+  margin: 20px 0;
+}
+
+ul.centered-bullets {
+  padding-left: 0;
+  text-align: center;
+  list-style-type: disc;
+  margin: 0 auto;
+}
+
+ul.centered-bullets li {
+  display: list-item;
+  margin-left: 20px;
 }
 
 .responsive-img {
