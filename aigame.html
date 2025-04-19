@@ -18,21 +18,22 @@
             border: 5px solid #004080;
             background-color: #c7ddff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
         }
         .score {
             text-align: center;
             font-size: 24px;
             margin-top: 20px;
             color: #004080;
+            display: none;
         }
         .game-over {
             text-align: center;
-           ;
+            font-size: 30px;
             color: red;
             display: none;
         }
-        .reset-button {
-            display: none;
+        .start-button, .reset-button {
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 18px;
@@ -42,7 +43,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .reset-button:hover {
+        .start-button:hover, .reset-button:hover {
             background-color: #002060;
         }
         .link-back {
@@ -57,10 +58,11 @@
     </style>
 </head>
 <body>
+    <button class="start-button" id="startButton">Start Game</button>
     <div class="score">Score: <span id="score">0</span></div>
     <canvas id="gameCanvas" width="400" height="400"></canvas>
     <div class="game-over" id="gameOver">Game Over!</div>
-    <button class="reset-button" id="resetButton">Reset Game</button>
+    <button class="reset-button" id="resetButton" style="display: none;">Reset Game</button>
     <div class="link-back">
         <a href="scratch.html">Back to Hobby Page</a>
     </div>
@@ -69,6 +71,7 @@
         const ctx = canvas.getContext('2d');
         const scoreDisplay = document.getElementById('score');
         const gameOverDisplay = document.getElementById('gameOver');
+        const startButton = document.getElementById('startButton');
         const resetButton = document.getElementById('resetButton');
 
         const gridSize = 20;
@@ -76,6 +79,7 @@
         let direction = 'right';
         let food = { x: gridSize * 10, y: gridSize * 10 };
         let score = 0;
+        let gameInterval;
 
         function drawSnake() {
             ctx.fillStyle = '#004080';
@@ -135,6 +139,7 @@
 
         function gameLoop() {
             if (checkCollision()) {
+                clearInterval(gameInterval);
                 gameOverDisplay.style.display = 'block';
                 resetButton.style.display = 'block';
                 return;
@@ -143,7 +148,6 @@
             drawFood();
             moveSnake();
             drawSnake();
-            setTimeout(gameLoop, 100);
         }
 
         document.addEventListener('keydown', event => {
@@ -163,6 +167,13 @@
             }
         });
 
+        startButton.addEventListener('click', () => {
+            startButton.style.display = 'none';
+            scoreDisplay.style.display = 'block';
+            canvas.style.display = 'block';
+            gameInterval = setInterval(gameLoop, 100);
+        });
+
         resetButton.addEventListener('click', () => {
             snake = [{ x: gridSize * 5, y: gridSize * 5 }];
             direction = 'right';
@@ -171,11 +182,10 @@
             scoreDisplay.textContent = score;
             gameOverDisplay.style.display = 'none';
             resetButton.style.display = 'none';
-            gameLoop();
+            gameInterval = setInterval(gameLoop, 100);
         });
 
         placeFood();
-        gameLoop();
     </script>
 </body>
 </html>
